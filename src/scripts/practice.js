@@ -1,7 +1,3 @@
-const outPrac = document.querySelector("#practice-output")
-
-outPrac.innerHTML += "<h2>Planets</h2>";
-
 const planets = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune"]
 
 /*
@@ -9,19 +5,11 @@ const planets = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uran
     to a section element in your HTML with an id of "planets".
     Use string templates to construct the DOM elements.
 */
-
-const planetEl = document.getElementById("planets")
-const planetFragment = document.createDocumentFragment()
-
-console.log("planets array", planets);
-
+//creates iterates through array and creates HTML string for each, then adds it to the DOM.
 planets.forEach(planet => {
-    const planetName = document.createElement("h4");
-    planetName.innerHTML = planet
-    planetFragment.appendChild(planetName);
+    const planetHTML = planetString(planet);
+    planetEl.innerHTML += planetHTML;
 })
-
-planetEl.appendChild(planetFragment);
 
 /*
     Use the map method to create a new array where the
